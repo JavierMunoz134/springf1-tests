@@ -35,7 +35,7 @@ class DriverRestControllerTest {
 
     @BeforeEach
     public void setup(){
-        driver = Driver.builder().id(2L).code("ADL").forename("ADOLFO").surname("BANDUNDU").build();
+        driver = Driver.builder().id(2L).code("VOX").forename("VOCADILLO").surname("XORIZO").build();
         driverDTO = DriverDTO.builder().id(2L).code("VOX").forename("VOCADILLO").surname("XORIZO").build();
     }
 
@@ -69,7 +69,7 @@ class DriverRestControllerTest {
     public void driverService_deleteDriver_returnsNothing(){
         when(driverRepo.findByCodeIgnoreCase(any())).thenReturn(Optional.ofNullable(driver));
 
-        driverService.deleteDriverByCode("ADL");
+        driverService.deleteDriverByCode("VOX");
         verify(driverRepo, times(1)).delete(driver);
     }
 
